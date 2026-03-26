@@ -979,7 +979,8 @@ a{ color:inherit; text-decoration:none; }
 .footer-grid{
   display:grid;
   grid-template-columns: 1fr;
-  gap: 1.2rem;
+  gap: clamp(30px, 4vw, 50px);
+  align-items:start;
 }
 .footer-col{
   background: rgba(255,255,255,.02);
@@ -987,6 +988,7 @@ a{ color:inherit; text-decoration:none; }
   border-radius: var(--radius-xl);
   padding: 1.1rem;
   backdrop-filter: blur(12px);
+  height:100%;
 }
 .footer-brand-name{
   font-weight:950;
@@ -1222,13 +1224,8 @@ a{ color:inherit; text-decoration:none; }
   .addons-grid{ grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid{ grid-template-columns: repeat(2, 1fr); }
   .final-cta-actions{ flex-direction:row; }
-  .footer-grid{ grid-template-columns: repeat(3, 1fr); }
-  .footer-bottom{
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:center;
-    text-align:left;
-  }
+  /* Tablet: 2 columns */
+  .footer-grid{ grid-template-columns: repeat(2, 1fr); }
   .section-cta{ flex-direction:row; align-items:center; justify-content:flex-start; }
   .hero-proof{ flex-direction:column; align-items:flex-start; justify-content:flex-start; }
   .hero-lead-row{ grid-template-columns: 1fr auto; align-items:stretch; gap:.4rem; }
@@ -1249,5 +1246,7 @@ a{ color:inherit; text-decoration:none; }
   body{ padding-bottom: 0; }
   .sticky-bar{ display:none; }
   .whatsapp-fab{ bottom: 18px; }
+  /* Desktop: 3 columns */
+  .footer-grid{ grid-template-columns: repeat(3, 1fr); }
 }
 
